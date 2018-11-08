@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <h1>
+      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
+      <span translate> Applicants </span>
+    </h1>
+
+    <app-loader [isLoading]="isLoading"></app-loader>
+
+    <!-- <q [hidden]="isLoading">{{quote}}</q> -->
+
+    <button kendoButton [primary]="true">Primary</button>
+    <kendo-grid [kendoGridBinding]="gridData">
+      <kendo-grid-column field="Id" width="130">
+        <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          <strong>{{dataItem.Id}}</strong>
+        </ng-template>>
+      </kendo-grid-column>
+      <kendo-grid-column field="FirstName" width="130"></kendo-grid-column>
+      <kendo-grid-column field="LastName" width="130"></kendo-grid-column>
+      <kendo-grid-column field="ApplyforId" width="130"></kendo-grid-column>
+      <kendo-grid-column field="StageId" width="130"></kendo-grid-column>
+      <kendo-grid-column field="Email" width="160"></kendo-grid-column>
+      <kendo-grid-column field="Phone" width="130"></kendo-grid-column>
+      <kendo-grid-column field="PhoneScreenInterviewer" width="130"></kendo-grid-column>
+      <kendo-grid-column field="PhoneScreenDate" width="130"></kendo-grid-column>
+      <kendo-grid-column width="140">
+        <ng-template kendoGridCellTemplate>
+          <!-- <button kendoButton [look]="'outline'" [icon]="'gear'" class="btn-warning"> Edit</button>
+          <button kendoButton [look]="'outline'" [icon]="'trash'" id="delete"> Delete</button> -->
+          <p class="k-block" style="color: #ffc000; display: inline-block; ">
+            <button kendoButton icon="gear" look="flat">Edit </button>
+          </p>
+          <p class="k-block" style="color: #f31700; display: inline-block;">
+            <button kendoButton icon="trash" look="flat">Delete</button>
+          </p>
+
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+  </div>
+</div>
